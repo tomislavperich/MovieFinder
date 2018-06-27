@@ -1,0 +1,97 @@
+.noselect {
+    user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
+}
+
+.noselect-pointer {
+    user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    background: #56ccf2; /* fallback for old browsers */
+    background: linear-gradient(#56ccf2, #2f80ed);
+    background: -o-linear-gradient(#56ccf2, #2f80ed);
+    background: -moz-linear-gradient(#56ccf2, #2f80ed);
+    background: -webkit-linear-gradient(#56ccf2, #2f80ed);
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas:
+    ". . ."
+    ". search ."
+    ". footer .";
+    
+    width: 100vw;
+    height: 100vh;
+}
+
+.searchField {
+    grid-area: search;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    
+    margin-top: -15vh;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.searchField h1 {
+    /*margin-top: -20vh;*/
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, .2));
+}
+
+.searchField form {
+    padding: 3vh;
+}
+
+.searchField form input {
+    width: 20vw;
+    font-size: 1.7em;
+    
+    text-align: center;
+    font-weight: 300;
+    color: rgb(190, 190, 190);
+    
+    border: 1px solid rgba(127, 127, 127, .5);
+    border-radius: 4px;
+    transition: all ease-in-out 200ms;
+}
+
+.searchField form input:focus {
+    background: rgb(0, 110, 190);
+    color: white;
+    box-shadow: 0 0 15px rgba(80, 200, 240, 1);
+    padding: 3px 15px 3px 15px;
+    margin: 5px 17px 5px 17px;
+    border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.footer {
+    grid-area: footer;
+    text-align: center;
+    font-family: sans-serif;
+    color: rgba(255, 255, 255, .4);
+}

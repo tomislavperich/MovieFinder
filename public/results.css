@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #56ccf2; /* fallback for old browsers */
+    background: linear-gradient(#56ccf2, #2f80ed);
+    background: -o-linear-gradient(#56ccf2, #2f80ed);
+    background: -moz-linear-gradient(#56ccf2, #2f80ed);
+    background: -webkit-linear-gradient(#56ccf2, #2f80ed);
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10vh 80vh 5vh 5vh;
+    grid-template-areas:
+    "header header header"
+    "results results results"
+    ". navback ."
+    "footer footer footer";
+    
+    height: inherit;
+}
+
+.wrapper h1 {
+    grid-area: header;
+    padding: 4vh 0 4vh 0;
+    color: white;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.movieContainer {
+    grid-area: results;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 1vh 1vh 0 1vh;
+    /*background: red;*/
+}
+
+.movieContainer a {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 8vw;
+    margin: 1vh 0 1vh 0;
+    transition: all ease-in-out 150ms;
+    text-decoration: none;
+}
+
+.movieContainer a:hover,
+.movieContainer a:focus {
+    z-index: 99;
+    transform: scale(1.1);
+    filter: brightness(110%) drop-shadow(5px 5px 10px rgba(0,0,0,.4));
+}
+
+.movieContainer a img {
+    width: 150px;
+    padding: 1vh;
+}
+
+.movieContainer a h4 {
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.movieContainer a p {
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.navback {
+    grid-area: navback;
+    text-align: center;
+    margin: -10vh 0 0 0;
+}
+
+.navback a {
+    color: white;
+    font-size: 1.7em;
+    font-family: sans-serif;
+    text-decoration: none;
+    transition: all ease-in-out 150ms;
+}
+
+.navback a:hover,
+.navback a:focus {
+    color: rgb(70, 230, 255);
+}
+
+.footer {
+    grid-area: footer;
+    text-align: center;
+    font-family: sans-serif;
+    color: rgba(255, 255, 255, .4);
+}

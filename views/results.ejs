@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Movie Search</title>
+        <link rel="stylesheet" href="results.css"/>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>Movie results</h1>
+            <div class="movieContainer">
+                <% data["Search"].forEach(function(movie) { %>
+                        <a href="https://www.imdb.com/title/<%= movie["imdbID"] %>/" target="_blank">
+                            <img src="<%= movie["Poster"] %>"/>
+                            <h4><%= movie["Title"] %></h4>
+                            <br>
+                            <p>(<%= movie["Year"] %>)</p>
+                        </a>
+                <% }); %>
+            </div>
+            <div class="navback">
+                <a href="/">Search again</a>
+            </div>
+            <div class="footer">
+                <p>© Tomislav Perić 2018</p>
+            </div>
+        </div>
+    </body>
+</html>
