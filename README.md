@@ -1,1 +1,2 @@
 # MovieFinder
+![screenshot](moviefinder.png)
